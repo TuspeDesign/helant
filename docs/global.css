@@ -1,0 +1,304 @@
+@font-face {
+    font-family: poppins;
+    src: local('Poppins Bold'), local('Poppins-Bold'),
+    url('fonts/Poppins-Bold.woff2') format('woff2'),
+    url('fonts/Poppins-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+:root {
+    --bg-black: #000;
+    --bg-blue: #006c8d;
+    --text-white: #fff;
+    --bg-button: #ea7d00;
+    --bg-gray: #f2f2f2;
+    --bg-opacity-left: #00000080;
+    --bg-opacity-right: #00000020;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Verdana, sans-serif;
+    text-rendering: optimizeLegibility;
+    color: var(--main-color);
+    line-height: 1.5;
+}
+
+body,
+h1,
+h2,
+#soita h3,
+#yhteys h3 {
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    font-family: poppins;
+    line-height: 1.2;
+}
+
+h1,
+h2 {
+    font-size: clamp(2.2rem, 2.6rem, 6vw);
+}
+
+h2,
+.serviceList h3 {
+    color: var(--bg-blue);
+}
+
+p:first-child {
+    margin-top: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+p+p {
+    margin-top: 15px;
+}
+
+section:not(#yritys):not(#yhteys) {
+    padding: 3rem 0;
+}
+
+footer {
+    background-color: var(--bg-black);
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+footer a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+#yritys {
+    position: relative;
+}
+
+#yritys img {
+    object-fit: cover;
+    object-position: center;
+}
+
+#yritys img,
+#yritys .opacity {
+    height: 100%;
+    width: 100%;
+}
+
+#yritys .opacity {
+    align-items: center;
+    color: var(--text-white);
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+#soita {
+    background-color: var(--bg-blue);
+    color: var(--text-white);
+}
+
+#soita a {
+    background: var(--bg-button);
+    border-radius: 10px;
+    color: var(--text-white);
+    display: inline-block;
+    font-size: 1.1rem;
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#yhteys {
+    padding-bottom: 2rem;
+}
+
+#yhteys h3 {
+    font-size: 1.1rem;
+}
+
+#yhteys .container {
+    gap: 2rem;
+}
+
+#kokemuksia {
+    background-color: var(--bg-gray);
+}
+
+#kokemuksia .cols {
+    margin-top: 2rem;
+}
+
+#kokemuksia .grid {
+    gap: 0.8rem;
+}
+
+#kokemuksia .box {
+    -moz-box-shadow: 2px 2px 5px 0 rgba(0,0,0,.15);
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(0,0,0,.15);
+    background-color: var(--text-white);
+    border-radius: 10px;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.15);
+    padding: 25px;
+}
+
+.grid {
+    display: grid;
+}
+
+.center {
+    text-align: center;
+}
+
+.contactInfo {
+    gap: 1rem;
+}
+
+.contactInfo img {
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+}
+
+.container.narrow {
+    max-width: 700px;
+}
+
+.container:not(.narrow) {
+    max-width: 1280px;
+}
+
+.middle {
+    align-items: center;
+}
+
+.serviceList {
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.serviceList h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    text-transform: uppercase;
+}
+
+.serviceList .content {
+    font-size: 0.92rem;
+}
+
+@media screen and (min-height: 700px) and (min-width: 750px) {
+    #yritys {
+        height: calc(100vh - 175px);
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .serviceList {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 550px) {
+    .serviceList {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    #yhteys .container {
+        grid-template-columns: 400px 1fr;
+    }
+
+    #yritys .opacity {
+        background-image: linear-gradient(to right, var(--bg-opacity-left), var(--bg-opacity-right));
+    }
+
+    #yritys .text {
+        margin-left: 5vw;
+        width: 600px;
+    }
+
+    #kokemuksia .cols {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .serviceList {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    #yritys h1 {
+        text-align: center;
+    }
+
+    #yritys .opacity {
+        background-color: var(--bg-opacity-left);
+    }
+
+    #yritys .text {
+        margin: 0 auto;
+        max-width: 500px;
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    #soita .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    #soita .container .text {
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #soita .container {
+        display: grid;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    #yritys {
+        height: 100vh;
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .contactInfo {
+        grid-template-columns: 200px 1fr;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contactInfo {
+        text-align: center;
+    }
+
+    .contactInfo img {
+        margin: 0 auto;
+    }
+}
